@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcadia</title>
+    <meta name="author" content="David Fernando Poot Cortazar"> 
+    <meta name="description" content="Arcadia es la mejor página web para contenido relacionado a videojuegos">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/styles.css">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/9df9058901.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+       <nav class="nav">
+        <div class="nav__container">
+            <div class="nav__container--logo">
+              <a href="/arcadia.html"><img src="/assets/images/arcadia.webp" alt="logo arcadia" class="arcadia__icon"></a>
+              <a href="/arcadia.html" class="nav__title">Arcadia</a>
+            </div>
+            <label for="menu" class="nav__label">
+                <img src="/assets/images/bars-solid.svg" alt="menu logo" class="nav__logo">
+            </label>
+            <input type="checkbox" id="menu" class="nav__input">
+            <div class="nav__menu">
+                <a href="/arcadia.html" class="nav__item">Inicio</a>
+                <a href="/rutes/gallery.html" class="nav__item">Galería</a>
+                <a href="/rutes/aboutus.html" class="nav__item">Acerca de nosotros</a>
+                <a href="/rutes/contact.html" class="nav__item">Contacto</a>
+                <a href="/rutes/feedback.html" class="nav__item">FeedBack</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <article>
+            <h1 class="title">¡Te escuchamos!</h1>
+            <p class="subtitle">Llenando este formularío ayudas a mejorar la calidad de Arcadia </p>
+        </article>
+        <div>
+            <form action="" class="form__feedback">
+                <h2 class="subtitle form--sub">¿Qué consolas disfrutas mas?</h2>
+                <div class="form form--div">
+                   <input type="checkbox" id="nintendo" name="company" value="nintendo" class="input__checked">
+                   <label for="nintendo" class="label__checked">Nintendo</label>
+
+                   <input type="checkbox" id="xbox" name="company" value="xbox" class="input__checked">
+                   <label for="xbox" class="label__checked">Xbox</label>
+                   
+                   <input type="checkbox" id="playstation" name="company" value="playstation" class="input__checked">
+                   <label for="playstation" class="label__checked">PlayStation</label>
+                    
+                   <input type="checkbox" id="none" name="company" value="none" class="input__checked">
+                   <label for="none" class="label__checked">Ninguna</label>
+                </div>
+                <h2 class="subtitle form--sub">¿Qué Generos de Videojuegos disfrutas mas?</h2>
+                <div class="form form--div">
+
+                   <input type="checkbox" id="accion-aventura" name="gender" value="accion-aventura" class="input__checked">
+                   <label for="accion-aventura" class="label__checked">Accion - Aventura</label>
+                  
+                   <input type="checkbox" id="plataformas" name="gender" value="plataformas" class="input__checked">
+                   <label for="plataformas" class="label__checked">Plataformas</label>
+                   
+                   <input type="checkbox" id="rol" name="gender" value="rol" class="input__checked">
+                   <label for="rol" class="label__checked">RPG - JRPG</label>
+                   
+                   <input type="checkbox" id="shooter" name="gender" value="shooter" class="input__checked">
+                   <label for="shooter" class="label__checked">Shooter</label>
+                  
+                   <input type="checkbox" id="deportivo" name="gender" value="deportivo" class="input__checked">
+                   <label for="deportivo" class="label__checked">Deportivo</label>
+                  
+                   <input type="checkbox" id="metroidvania" name="gender" value="metroidvania" class="input__checked">
+                   <label for="metroidvania" class="label__checked">Metroidvania</label>
+                   
+                   <input type="checkbox" id="battleroyale" name="gender" value="battleroyale" class="input__checked"> 
+                   <label for="battleroyale" class="label__checked">Battle-Royale</label>
+                   
+                   <input type="checkbox" id="survival-horror" name="gender" value="survival-horror" class="input__checked"> 
+                   <label for="survival-horror" class="label__checked">Survival - Horror</label>
+                   
+                   <input type="checkbox" id="lucha" name="gender" value="lucha" class="input__checked">
+                   <label for="lucha" class="label__checked">Lucha</label>
+                   
+                   <input type="checkbox" id="simulacion" name="gender" value="simulacion" class="input__checked">
+                   <label for="simulacion" class="label__checked">Simulación</label>
+                </div>
+
+                <h2 class="subtitle form--sub">¿Qué videojuego te gustaría ver en Arcadia?</h2>
+
+                <div class="textarea__container">
+                   <label for="whatgame"></label>
+                   <textarea name="whatgame" id="whatgame" cols="30" rows="10" placeholder="Cuéntanos..." class="form__textarea"></textarea >
+                 </div>
+
+                <h2 class="subtitle form--sub">¿Cómo calificarías a Arcadia?</h2>
+                <div class="form form--div">
+                   <input type="radio" id="epic" name="calification" value="epic" class="input__checked">
+                   <label for="epic" class="label__checked">¡Épico!</label>
+                 
+                   <input type="radio" id="good" name="calification" value="good" class="input__checked">
+                   <label for="good" class="label__checked">¡Bueno!</label>
+
+                   <input type="radio" id="canbebetter" name="calification" value="canbebetter" class="input__checked">
+                   <label for="canbebetter" class="label__checked">Puede mejorar</label>
+                </div>
+                
+                <h2 class="subtitle form--sub">¿Tienes algún comentario?</h2>
+                <div class="textarea__container">
+                   <label for="commentary"></label>
+                   <textarea name="commentary" id="commentary" cols="30" rows="10" placeholder="Escribre tu mensaje..." class="form__textarea"></textarea>
+                </div>
+
+                <h2 class="subtitle form--sub">Dejanos contactarte a través de tu Email</h2>
+                
+                <div class="email__container">
+                   <label for="email__feedback"></label>
+                   <input type="email" id="email__feedback" name="correo" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" class="email__form form__input" placeholder="Correo electrónico...">
+                </div>
+                
+
+                   <div class="button button--style button--feedback"> 
+                    <label for="send-feedback"></label>
+                    <input type="submit" id="send-feedback" class="form__button" value="Enviar FeedBack">
+                 </div>
+
+            </form>
+        
+    </main>
+    <footer class="footer__social">
+        <ul class="social-bar">
+            <li class="social-bar__item icon--facebook">
+               <a href="https://www.facebook.com/ferpoot.cortazar" target="_blank"> <img src="/assets/images/social/facebook-brands.svg" alt="facebook logo" class="icon  "></a>
+            </li>
+            <li class="social-bar__item icon--twitter">
+               <a href="https://twitter.com/?lang=es" target="_blank"> <img src="/assets/images/social/twitter-brands.svg" alt="twitter logo" class="icon"></a>
+            </li> 
+            <li class="social-bar__item icon--instagram">  
+               <a href="https://www.instagram.com/ferlel/?hl=es-la" target="_blank"> <img src="/assets/images/social/instagram-brands.svg" alt="instagram logo" class="icon"></a>
+           </li>
+           <li class="social-bar__item icon--youtube">
+               <a href="https://www.youtube.com/" target="_blank"> <img src="/assets/images/social/youtube-brands.svg" alt="youtube logo" class="icon"></a>
+           </li>
+        </ul>
+        <p class="rights">&copy 2022 Arcadia All Rights Reserved</p>
+    </footer>
+    </html>
