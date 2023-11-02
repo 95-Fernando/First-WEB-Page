@@ -1,0 +1,503 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #f0f8ff;
+}
+
+main{
+    margin-top: 85px;
+}
+
+body{
+    background-color: var(--bgc-color);  
+}
+
+:root{
+    /* --menu-color: rgb(14, 79, 97); */
+    --bgc-color: #1d3036;
+    --menu-color: #0d1a24;
+    --letter-color: #008fbe;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    --menu-filter-color: invert(37%) sepia(99%) saturate(899%) hue-rotate(162deg) brightness(91%) contrast(101%);
+    --card-color: #374f50;
+    --subtitle-color: #e5b663;
+    --border-color: #ffd700;
+    --button-color: #ff0047;
+    --gallery-bgc: #8a9987;
+    --letter-color-two: #f0f8ff;
+    --letter-color-three: #000000;
+}
+
+/* Estilos del menu */
+.arcadia__icon{
+    width: 80px;
+}
+
+.nav__container--logo{
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo{
+    width: 40px;
+}
+
+.nav__label,
+.nav__input{
+    display: none;
+}
+
+.nav{
+    width: 100%;
+    background-color: var(--menu-color);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.nav__container{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__menu{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+}
+
+.nav__item,
+.nav__title{
+    text-decoration: none;
+    color: var(--letter-color);
+    font-weight: bolder;
+}
+
+.nav__title{
+    font-size: 2rem;
+    color: inherit;
+}
+
+.nav__item::after{
+    content: "";
+    display: block;
+    width: 80%;
+    height: 3px;
+    background-color: var(--letter-color);
+    clip-path: var(--clippy);
+    transition: clip-path .7s;
+}
+
+.nav__item:hover:after{
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media (hover: hover){
+    .nav__label:hover{
+        filter: var(--menu-filter-color);
+    }
+
+    .nav__title:hover{
+        color: var(--letter-color);
+        transition: color .6s;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .nav__label{
+        display: block;
+        cursor: pointer;
+    }
+
+    /* .nav__menu li{
+        display: block;
+    } */
+
+    .nav__menu{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 80px;
+        left: 0;
+        bottom: 0;
+        background-color: var(--bgc-color);
+        align-items: center;
+        justify-content: space-evenly;
+        clip-path: circle(0% at 50% 50%);
+        transition: clip-path ease-in-out 1s;
+        gap: 0;
+    }
+
+    .nav__input:checked + .nav__menu{
+        clip-path: circle(100% at 50% 50%);
+    }
+ }
+
+ /* Estilos para el main content */
+
+ .main{
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .container__section{
+     display: flex;
+     flex-wrap: wrap;
+     width: 900px;
+     height: 330px;
+     margin: 5rem auto;
+     background-color: var(--card-color);
+     border: 3px solid var(--border-color);
+     border-radius: 7px;
+     overflow: hidden;
+ }
+
+ .container__texts{
+     width: 50%;
+ }
+
+ .images{
+     width: 50%;
+ }
+
+ .text,
+ .subtitle{
+     margin-left: 20px;
+     margin-top: 20px;
+     margin-right: 20px;
+ }
+
+ .subtitle,
+ .date{
+     text-align: center;
+ }
+
+ .text{
+    font-family: 'Nunito', sans-serif;
+ }
+
+ .subtitle{
+     font-size: 2rem;
+ }
+
+ .subtitle{
+     color: var(--subtitle-color);
+ }
+
+ @media screen and (max-width: 768px) {
+     .container__section{
+         flex-wrap: nowrap;
+         width: 500px;
+         height: auto;
+         flex-direction: column;
+     }
+
+     .images{
+         display: block;
+         width: 65%;
+         height: 38%;
+         margin-right: auto;
+         margin-left: auto;
+         margin-bottom: 15px;
+         outline: 2px solid var(--bgc-color);
+     }
+
+     .container__texts{
+         width: 100%;
+         margin-bottom: 10px;
+     }
+ }
+
+ /* Elementos de las tarjetas con !Ir¡ */
+
+ .button{
+     position: relative;
+     display: block;
+     margin-top: 20px;
+     width: 60px;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 3px 0;
+     border-radius: 5px;
+     border: 1px solid var(--border-color);
+     background-color: #55919e;
+     text-decoration: none;
+     font-size: 1.2rem;
+     text-align: center;
+ }
+
+ @media (hover: hover){
+     .button:hover{
+         box-shadow: 0 0 1.5rem var(--bgc-color);
+         color: var(--subtitle-color);
+         background-color: var(--letter-color);
+         transform: scale(1.2);
+     }
+
+     .button{
+         transition: box-shadow, color, background-color, transform .5s;
+     }
+ }
+
+ @media screen and (max-width: 768px){
+     .button{
+         margin-top: 15px;
+         margin-bottom: 15px;
+     }
+ }
+
+ /* Estilos Social Bar */
+ .footer__social{
+     background-color: var(--menu-color);
+     height: 150px;
+ }
+
+ .social-bar{
+     display: flex;
+     width: 100%;
+     justify-content: center;
+     gap: 2rem;
+ }
+
+ .social-bar__item{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 55px;
+     height: 55px;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     border-radius: 8px;
+     list-style: none; 
+ }
+
+ .icon{
+     width: 35px;
+     height: 35px;
+     filter: invert(97%) sepia(92%) saturate(5719%) hue-rotate(178deg) brightness(109%) contrast(107%);
+ }
+
+ .icon--facebook{
+     background-color: #3b5998;
+ }
+
+ .icon--twitter{
+     background-color: #1D9BF0;
+ }
+
+ .icon--instagram{
+     background-color: #c13584;
+ }
+
+ .icon--youtube{
+     background-color: #c4302b;
+ }
+
+.rights{
+    text-align: center;
+}
+
+ /* Estilos para Pestaña de About Us */
+
+.arcadia__logo{
+    width: 300px;
+}
+
+@media screen and (max-width: 768px){
+    .arcadia__logo{
+        width: 35%;
+        margin: auto;
+    }
+
+    .container__text--aboutus{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+ 
+/* Estilos para Pestaña de Contact */
+
+.title{
+    text-align: center;
+}
+ 
+.form__container{
+    display: inline-block;
+    margin-left: 30%;
+    height: 426px;
+    margin-bottom: 1.5rem;
+}
+
+.form__item{
+    margin: 3px 1px 5px;
+}
+
+.form__label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.form__input{
+    width: 100%;
+    height: 30px;
+}
+
+.form__textarea{
+    resize: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form__input,
+.form__textarea,
+.form__button{
+    border: none;
+    border-radius: 5px;
+    color: var(--letter-color-three);
+}
+
+.form__button{
+    padding: 5px;
+    color: var(--letter-color-two);
+    background-color: var(--letter-color);
+}
+
+.button--style{
+   width: 150px;
+   font-size: initial;
+   background-color: var(--letter-color);
+}
+
+.mario__image{
+    width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+    .mario__image{
+        display: none;
+    }
+
+    .form__container{
+        display: block;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Estilos de la pestaña Galería */
+.gallery__container{
+    display: inline-block;
+    columns: 3 400px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.gallery__card{
+    display: inline-block;
+    background-color: var(--card-color);
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.gallery__text,
+.gallery__sub{
+    padding: 5px;
+    margin-top: 0;
+}
+
+.gallery__image{
+    max-width: 100%;
+}
+
+@media (hover: hover){
+    .gallery__card:hover{
+        background-color: var(--letter-color);
+        border: 2px solid var(--button-color);
+        color: var(--letter-color-three);
+        outline: 4px solid var(--button-color);
+    }
+
+    .gallery__card{
+        transition: .4s;
+    }
+}
+
+/* Estilos de la pestaña de Go nintendo, xbox y playstation */
+
+.date,
+time{
+    margin: 15px 0;
+    font-size: .8rem;
+    color: var(--gallery-bgc);
+}
+
+/* Estilos de la pestaña Feedback */
+
+.form__feedback{
+    text-align: center;
+}
+
+.form--sub{
+    font-size: 1.2rem;
+    color: var(--gallery-bgc);
+}
+
+.form--sub,
+.form{
+    margin-bottom: 15px;
+}
+
+.label__checked{
+    padding: 5px 15px;
+    width: 200px;
+    border-radius: 15px;
+    margin: 15px;
+    background-color: var(--letter-color);
+}
+
+.input__checked:checked + .label__checked{
+    background-color: var(--border-color);
+    color: var(--menu-color);
+}
+
+.input__checked{
+    display: none;
+}
+
+.form--div{
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textarea__container,
+.email__container{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.button--feedback,
+.email__feedback{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.email__container{
+    width: 30%;
+}
+
+
