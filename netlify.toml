@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "arcadia.html"
+  status = 200
